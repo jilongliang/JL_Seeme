@@ -1,0 +1,60 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:ignore="ObsoleteLayoutParam"
+    tools:context="com.org.action.user.LoginActivity" >
+
+    <TextView
+        android:id="@+id/tv_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/tv_userName" />
+
+    <EditText
+        android:id="@+id/et_userName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/tv_userName"
+        android:ems="10"
+        tools:ignore="TextFields" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_passWord"
+        tools:ignore="TextViewEdits,Deprecated" />
+
+    <EditText
+        android:id="@+id/et_passWord"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:password="true"
+        tools:ignore="Deprecated,TextFields" />
+    
+	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    tools:ignore="UselessLeaf" >
+
+	    <CheckBox
+	        android:id="@+id/ck_remember_Pwd"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:checked="true"
+	        android:text="@string/ck_remember_Pwd" />
+	    <Button
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:onClick="loginClick"
+	        android:text="@string/btnLogin" />
+	</RelativeLayout>
+    
+</LinearLayout>

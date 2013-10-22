@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:ignore="HardcodedText" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/personIdTitle"
+            android:layout_width="98px"
+            android:layout_height="wrap_content"
+            android:text="编号"
+            tools:ignore="PxUsage" />
+
+        <TextView
+            android:id="@+id/nameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/personIdTitle"
+            android:layout_toRightOf="@id/personIdTitle"
+            android:text="姓名" />
+
+        <TextView
+            android:layout_width="198px"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/nameTitle"
+            android:layout_toRightOf="@id/nameTitle"
+            android:gravity="center_horizontal"
+            android:text="年龄"
+            tools:ignore="PxUsage" />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/liteView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

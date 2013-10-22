@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Seme</string>
+    <string name="action_settings">Settings</string>
+    
+	<!-- 用户管理 -->
+    <string name="appLogin">登录界面</string>
+    <string name="userName">账户:</string>
+    <string name="passWord">密码:</string>
+    <string name="btnLogin">登录</string>
+    <string name="btnCancle">取消</string>
+    <string name="tv_userName">用户名</string>
+    <string name="et_userName">请输入用户名</string>
+    <string name="tv_passWord">密码</string>
+    <string name="et_PassWord">请输入密码</string>
+    <string name="ck_remember_Pwd">记住密码</string>
+    
+    <!-- 文件管理 -->
+    <string name="btnSdk">文件操作</string>
+</resources>

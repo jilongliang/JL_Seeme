@@ -1,0 +1,68 @@
+package com.org.action.user;
+
+import java.util.Map;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.org.R;
+import com.org.dao.user.UserDao;
+@SuppressWarnings("all")
+public class LoginActivity extends Activity {
+	private String tag="LoginActivity";
+	private EditText et_userName;
+	private EditText et_passWord;
+	private CheckBox cb;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.login);
+		et_userName=(EditText)this.findViewById(R.id.et_userName);
+		et_passWord=(EditText)this.findViewById(R.id.et_passWord);
+		cb=(CheckBox)findViewById(R.id.ck_remember_Pwd);
+		/**
+		 * 检测本地是否有用户名和密码
+		 */
+		Map<String, String> map=new UserDao().getSaveInfo(this);
+		
+		if(map!=null){
+			et_userName.setText(map.get("username"));
+			et_passWord.setText(map.get("password"));
+		}
+	}
+	/**
+	 * 登录
+	 */
+	public void loginClick(View v1){
+		String 	userName=et_userName.getText().toString().trim();
+		String 	passWord=et_passWord.getText().toString().trim();
+		if(TextUtils.isEmpty(userName)||TextUtils.isEmpty(passWord)){
+			//提示
+			Toast.makeText(this, "用户名和密码不能为空", Toast.LENGTH_SHORT).show();
+			Log.e(tag, "操作失败");
+		}else{
+			if(cb.isChecked()){
+				//保存用户名密码
+				Log.i(tag, "需要保存用户信息!");
+				boolean result=new UserDao().saveUserInfo(this,userName, passWord);
+				if(result){
+					Toast.makeText(this, "保存用户信息成功", Toast.LENGTH_SHORT).show();
+				}
+			}else{
+				//登录
+				if(userName.equals("liangjilong")&&passWord.equals("admin123")){
+					Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+				}else{
+					Toast.makeText(this, "登录失败", Toast.LENGTH_SHORT).show();
+				}
+			}
+		}
+	}
+}

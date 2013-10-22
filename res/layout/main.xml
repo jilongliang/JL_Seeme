@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ObsoleteLayoutParam" ><!--ObsoleteLayoutParam忽略参数  -->
+		
+	<!-- 登录 -->
+    <Button
+        android:onClick="startLoginView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnLogin"
+        tools:ignore="HardcodedText" />
+	<!-- 文件 -->
+    <Button
+        android:onClick="startFileView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnSdk"
+        tools:ignore="HardcodedText" />
+     
+</LinearLayout>
